@@ -1,5 +1,8 @@
 <script>
+	import { inboxTasks, allTasks, selectedTaskId, editingTaskId } from '$lib/stores/taskStore';
+	import { setContext } from 'svelte';
 	import Task from '$lib/components/Task/Task.svelte';
+	setContext('currentTasksList', inboxTasks);
 </script>
 
 <div class="page-heading">
@@ -10,7 +13,9 @@
 </div>
 
 <div class="page-content">
-	<Task />
+	{#each $allTasks as currentTask}
+		<Task {currentTask} />
+	{/each}
 </div>
 
 <style>

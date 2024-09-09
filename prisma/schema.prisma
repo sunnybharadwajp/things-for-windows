@@ -13,8 +13,10 @@ datasource db {
 model Task {
  id        Int       @id @default(autoincrement())
   title     String?
-  completed Boolean  @default(false)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  done      Boolean   @default(false)
+  doneWhen  DateTime?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
 }
 

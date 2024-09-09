@@ -1,6 +1,10 @@
 @import './styles/reset.scss';
 @import './styles/fonts.scss';
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
 	font-family: 'SFProDisplay', sans-serif;
 	font-size: 16px;
@@ -8,10 +12,39 @@ body {
 }
 
 .page-container {
+	position: relative;
 	padding: 32px 64px;
 	width: 100%;
-	// background: #f9f9fb;
-	background: black;
+
+	.page-footer {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		padding: 0.2rem 1rem;
+		background: white;
+		display: flex;
+		justify-content: center;
+		.page-footer-button {
+			background: transparent;
+			padding: 0.2rem 2rem;
+			border-radius: 6px;
+			border: 1px solid #f5f6f8;
+			line-height: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			&:hover {
+				cursor: pointer;
+				border: 1px solid #c6c6c6;
+			}
+
+			svg {
+				stroke: #585b5f;
+			}
+		}
+	}
 }
 
 .page-heading {
@@ -20,7 +53,8 @@ body {
 	display: flex;
 	align-items: center;
 	gap: 6px;
-	margin-bottom: 12px;
+	margin-bottom: 8px;
+	padding: 4px 6px;
 	.page-heading-icon img {
 		width: 24px;
 		height: 24px;
@@ -34,9 +68,6 @@ body {
 	display: flex;
 	&.selected {
 		background: #c6e1ff;
-		& .task-checkbox input[type='checkbox'] {
-			background-color: #c6e1ff;
-		}
 	}
 
 	.task-checkbox {
@@ -44,10 +75,14 @@ body {
 		height: 24px;
 		display: flex;
 		align-items: center;
+		input[type='checkbox'] {
+			width: 16px;
+			height: 16px;
+		}
 	}
 	.task-content {
 		flex-grow: 1;
-		padding: 0px 4px;
+		padding: 0px 2px;
 	}
 
 	.task-content .minimised {
