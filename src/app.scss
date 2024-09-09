@@ -1,0 +1,58 @@
+@import './styles/reset.scss';
+@import './styles/fonts.scss';
+
+body {
+	font-family: 'SFProDisplay', sans-serif;
+	font-size: 16px;
+	color: #373a3e;
+}
+
+.page-container {
+	padding: 32px 64px;
+	width: 100%;
+	// background: #f9f9fb;
+	background: black;
+}
+
+.page-heading {
+	font-size: 24px;
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	margin-bottom: 12px;
+	.page-heading-icon img {
+		width: 24px;
+		height: 24px;
+	}
+}
+
+.task {
+	background: white;
+	padding: 4px 8px;
+	border-radius: 4px;
+	display: flex;
+	&.selected {
+		background: #c6e1ff;
+		& .task-checkbox input[type='checkbox'] {
+			background-color: #c6e1ff;
+		}
+	}
+
+	.task-checkbox {
+		width: 24px;
+		height: 24px;
+		display: flex;
+		align-items: center;
+	}
+	.task-content {
+		flex-grow: 1;
+		padding: 0px 4px;
+	}
+
+	.task-content .minimised {
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}

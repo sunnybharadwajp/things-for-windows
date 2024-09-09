@@ -1,0 +1,3 @@
+- [] Setup prisma and schema for tasks
+- [] Page footer bar on layout
+- [] Add button on page footer adds a new task and sets it as selected and editing
